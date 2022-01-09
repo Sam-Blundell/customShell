@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 
         if(!cmd)
         {
-            exit(EXIT_SUCCESS):
+            exit(EXIT_SUCCESS);
         }
 
         if(cmd[0] == '\0' || strcmp(cmd, "\n") == 0)
