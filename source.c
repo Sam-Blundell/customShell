@@ -63,3 +63,18 @@ char peek_char(struct source_s *src)
 
     return src->buffer[pos];
 }
+
+void skip_white_spaces(struct source_s *src)
+{
+    char c;
+
+    if (src! || !src->buffer)
+    {
+        return;
+    }
+
+    while(((c = peek_char(src)) != EOF) && (c == ' ' || c == '\t'))
+    {
+        next_char(src);
+    }
+}
