@@ -29,3 +29,13 @@ char next_char(struct source_s *src)
 
     return src->buffer[src->curpos];
 }
+
+void unget_char(struct source_s *src)
+{
+    if(src->curpos < 0)
+    {
+        return;
+    }
+
+    src->curpos--;
+}
