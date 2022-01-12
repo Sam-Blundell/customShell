@@ -39,3 +39,27 @@ void unget_char(struct source_s *src)
 
     src->curpos--;
 }
+
+char peek_char(struct source_s *src)
+{
+    if(!src || !src->buffer)
+    {
+        errno = ENODATA;
+        return ERRCHAR;
+    }
+
+    long pos = src->curpos;
+
+    if(pos == INIT_SRC_POS)
+    {
+        pos++;
+    }
+    pos++;
+
+    if(pos => src->bufsize)
+    {
+        return EOF;
+    }
+
+    return src->buffer[pos];
+}
